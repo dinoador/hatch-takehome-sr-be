@@ -23,7 +23,9 @@ public class AuthenticationService {
             repository.findByEmail(request.getEmail())
                 .map(user ->
                     AuthenticationResponse
-                .builder().msg("User already exist").build())
+                        .builder()
+                        .msg("User already exist")
+                        .build())
                 .orElseGet(() -> {
                     final var user = User.builder()
                         .firstname(request.getFirstname())
