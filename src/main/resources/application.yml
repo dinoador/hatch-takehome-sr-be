@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: "takehome"
+  datasource:
+    url: jdbc:postgresql://postgres.server:5432/jwt_security
+    username: username
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+countries:
+  trevorblades:
+    url: "https://countries.trevorblades.com/"
+
+redis:
+  address: "redis://redis.server:6379"
+
+ratelimit:
+  refresh:
+    interval: 1
+  request:
+    authenticated: 20
+    anonymous: 5
+
+logging:
+  level:
+    root: INFO
+

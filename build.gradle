@@ -1,0 +1,62 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.2'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'com.google.cloud.tools.jib' version '3.3.1'
+}
+
+jib {
+    from {
+        image = 'eclipse-temurin:17.0.4.1_1-jre'
+    }
+    to {
+        image = 'spring-boot-takehome-sr-be'
+    }
+}
+
+group = "com.example"
+version = "0.0.1-SNAPSHOT"
+sourceCompatibility = "17"
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter"
+    implementation "org.springframework.boot:spring-boot-starter-actuator"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa"
+    implementation "org.springframework.boot:spring-boot-starter-security"
+    implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation "org.springframework.boot:spring-boot-starter-webflux"
+    implementation "org.postgresql:postgresql:42.5.3"
+    implementation "io.jsonwebtoken:jjwt-api:0.11.5"
+    implementation "io.jsonwebtoken:jjwt-impl:0.11.5"
+    implementation "io.jsonwebtoken:jjwt-jackson:0.11.5"
+
+    implementation('com.giffing.bucket4j.spring.boot.starter:bucket4j-spring-boot-starter:0.7.0') {
+        exclude group: 'org.ehcache', module: 'ehcache'
+    }
+
+    implementation 'org.redisson:redisson-spring-boot-starter:3.19.3'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'io.projectreactor:reactor-test'
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.1.1'
+
+
+}
+
+tasks.named("test") {
+    useJUnitPlatform()
+}

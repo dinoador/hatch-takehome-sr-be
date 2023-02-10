@@ -1,0 +1,58 @@
+services:
+  postgres.server:
+    container_name: postgres.server
+    image: postgres
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - default-network
+    restart: unless-stopped
+
+  pgadmin.server:
+    container_name: pgadmin.server
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    ports:
+      - "5050:80"
+    networks:
+      - default-network
+    restart: unless-stopped
+
+  redis.server :
+    container_name: redis.server
+    image: redis:latest
+    ports:
+      - 6379:6379
+    #network_mode: host
+    networks:
+      - default-network
+
+  springboot.server:
+    container_name: springboot.server
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    image: springboot.server
+    ports:
+      - 8080:8080
+    networks:
+      - default-network
+
+networks:
+  default-network:
+    name: my-network
+
+volumes:
+  postgres:
+  pgadmin:
