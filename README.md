@@ -37,9 +37,8 @@ Note: The table _user is automatically created, destroy when SpringBoot starts/s
 
 docker-compose up -d --build redis.server
 
-
-## If using Intellij
-`Reload All Gradle Projects`
+## Reload Gradle
+Reload Gradle dependencies using your favourite IDE
 
 ## Build using Gradle
 
