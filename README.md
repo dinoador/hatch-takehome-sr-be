@@ -47,12 +47,15 @@ docker-compose up -d --build redis.server
 
 ## Run using Gradle
 
-`gradle bootRun`
+`gradle bootRun`  ** WORKING **
 
-## Or run Docker-Compose
+## To build and Run Docker using Docker-Compose
 
-`docker-compose up -d --build springboot.server`
+`docker-compose up -d --build springboot.server`  ** NOT WORKING. Pls refer below. **
 
+## To build using Jib and Run Docker
+
+`gradle jibDockerBuild` then `docker run -p 8080:8080 springboot.server` ** NOT WORKING. Pls refer below. **
 
 ## How To Test in Post Man
 - Open up `Postman.postman_collection`
