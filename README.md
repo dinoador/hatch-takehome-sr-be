@@ -49,18 +49,18 @@ docker-compose up -d --build redis.server
 
 `gradle bootRun`
 
-### Or run Docker-Compose
+## Or run Docker-Compose
 
 `docker-compose up -d --build springboot.server`
 
 
-### How To Test in Post Man
+## How To Test in Post Man
 - Open up `Postman.postman_collection`
 - Register - `http://localhost:8080/api/v1/auth/register`
 - Authenticate - `http://localhost:8080/api/v1/auth/authenticate`
 - Run - `http://localhost:8080/api/v1/uniqueContinentsByCountry?countryCodes=US,CA,IT,EG` with Authorization Bearer Token to test authenticated. Remove for anonymous.
 
-### Notes
+## Notes
 Currently, I'm not able to run the Spring-Boot app in docker because it fails to connect to Redis and I can't, for the life of me, figure it out. Really disappointed and tired. Perhaps you can tell me what I did wrong at the interview ^^
 
 Overall, it was really a good experience although at times I wanted to smash my keyboard, pull my hair - ya know ^^. Seriously, I had fun but I wondered how come you guys made it more difficult than I thought. On the other hand, I'm going to use what I've learned here in my personal app. This was actually a good time to figure out how to use Spring Webflux with Spring Boot so I really appreciate that. It was something I came across at Openlane, but never had the time to figure it out.
