@@ -32,5 +32,5 @@ ratelimit:
 
 logging:
   level:
-    root: INFO
+    root: WARN
 
