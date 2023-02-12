@@ -7,6 +7,9 @@
 - Implemented APIs uses Spring Webflux for non-blocking support of Reactive Streams
 - Included Unit tests and Postman collection
 
+## Update host file
+127.0.0.1   redis.server
+127.0.0.1   postgres.server
 
 ## Run the necessary containers
 
