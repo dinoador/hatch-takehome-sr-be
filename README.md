@@ -8,7 +8,7 @@
 - Included Unit tests and Postman collection
 
 ## Update host file
-127.0.0.1   redis.server
+127.0.0.1   redis.server<br>
 127.0.0.1   postgres.server
 
 ## Run the necessary containers
