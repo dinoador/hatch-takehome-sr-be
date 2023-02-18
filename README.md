@@ -68,7 +68,7 @@ Reload Gradle dependencies using your favourite IDE
 ## Notes
 Currently, I'm not able to run the Spring-Boot app in docker because it fails to connect to Redis and I can't, for the life of me, figure it out. Perhaps you can tell me what I did wrong at the interview. ^^
 
-Overall, it was really a good experience although at times I wanted to smash my keyboard, pull my hair - ya know ^^. Seriously, I had fun but I wondered how come you guys made it more difficult than I thought. On the other hand, I'm going to use what I've learned here in my personal app. This was actually a good time to figure out how to use Spring Webflux with Spring Boot so I really appreciate that. It was something I came across at Openlane, but never had the time to figure it out.
+Overall, it was really a good experience although at times I wanted to smash my keyboard, pull my hair - ya know ^^. Seriously, I had fun, but I wondered how come you guys made it more difficult than I thought. On the other hand, I'm going to use what I've learned here in my personal app. This was actually a good time to figure out how to use Spring Webflux with Spring Boot so I really appreciate that. It was something I came across at Openlane, but never had the time to figure it out.
 
 Cheers
 
